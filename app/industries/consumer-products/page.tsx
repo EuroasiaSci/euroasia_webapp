@@ -63,16 +63,6 @@ export default function ConsumerProductsPage() {
     }
   ];
 
-  const standards = [
-    "REACH (EU) - Registration, Evaluation, Authorization and Restriction of Chemicals",
-    "CPSCIA (US) - Consumer Product Safety Improvement Act",
-    "California Proposition 65 - Safe Drinking Water and Toxic Enforcement Act",
-    "CCPSA (Canada) - Consumer Product Safety Act",
-    "China GB Standards - National Standards of China",
-    "ASTM F963 - Safety of Toys",
-    "EN 71 Series - European Toy Safety Standards",
-    "ISO 8124 - Safety of Toys International Standards"
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -82,7 +72,7 @@ export default function ConsumerProductsPage() {
       <section className="relative h-96 bg-gradient-to-r from-primary/90 to-secondary/90 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-5xl font-bold">Elevate Quality Assurance with EuroAsia&apos;s Consumer Product Testing Services</h1>
+          <h1 className="text-5xl font-bold">Consumer Products</h1>
           <p className="text-xl mt-4 max-w-2xl mx-auto">
             Comprehensive testing solutions ensuring safety, quality, and compliance across all consumer product categories
           </p>
@@ -150,12 +140,14 @@ export default function ConsumerProductsPage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-soft border border-neutral-200 hover:shadow-medium transition-shadow duration-300">
-                <div className="p-3 bg-primary/10 rounded-full w-fit mb-4">
+              <div key={index} className="group p-8 rounded-xl border border-neutral-200 hover:border-primary hover:shadow-medium transition-all duration-300 hover:-translate-y-1">
+                <div className="flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-xl mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-neutral-900 mb-3">{service.title}</h3>
-                <p className="text-neutral-600 leading-relaxed">{service.description}</p>
+                <h3 className="text-xl font-semibold text-neutral-900 mb-4 group-hover:text-primary transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-neutral-600 leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
@@ -163,154 +155,312 @@ export default function ConsumerProductsPage() {
       </section>
 
       {/* Our Expertise Covers a Range of Consumer Product Categories */}
-      <section className="py-16 bg-white">
+      <section className="py-20 bg-gradient-to-br from-neutral-50 to-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-neutral-900 mb-4">Our Expertise Covers a Range of Consumer Product Categories</h2>
-            <p className="text-lg text-neutral-600">
-              Comprehensive testing services across multiple consumer product categories
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-neutral-900 mb-6">Our Expertise Covers a Range of Consumer Product Categories</h2>
+            <p className="text-xl text-neutral-600 max-w-3xl mx-auto">
+              Comprehensive testing services across multiple consumer product categories with specialized expertise
             </p>
           </div>
           
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             {/* Textile & Leather */}
-            <div className="bg-neutral-50 rounded-xl p-8">
-              <h3 className="text-2xl font-bold text-neutral-900 mb-6">1. Textile & Leather</h3>
-              
+          <div className="mb-16">
+            <div className="bg-white rounded-3xl shadow-large border border-neutral-100 overflow-hidden">
+              {/* Header */}
+              <div className="bg-gradient-to-r from-primary/10 to-secondary/10 p-8 border-b border-neutral-200">
+                <div className="flex items-center space-x-4">
+                  <div className="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-neutral-900 mb-2">1. Textile & Leather</h3>
+                    <p className="text-lg text-neutral-600">
+                      EuroAsia textile and Leather industry services helps retailers, brands and manufacturers uphold quality standards while meeting regulatory standards results in consumer confidence and brand loyalty.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  {/* Left Column */}
               <div className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-semibold text-primary mb-3">Materials & Components:</h4>
+                    <div className="group p-6 bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-2xl border border-blue-200 hover:border-primary transition-colors duration-300">
+                      <h4 className="text-xl font-bold text-primary mb-4 flex items-center">
+                        <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                        Materials & Components
+                      </h4>
                   <ul className="space-y-2 text-neutral-700">
-                    <li>• Raw materials</li>
-                    <li>• Yarns & Fabric</li>
-                    <li>• Chemicals and finished products</li>
-                    <li>• Zippers, buttons, cords</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></span>Raw materials</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></span>Yarns & Fabric</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></span>Chemicals and finished products</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-blue-500 rounded-full mr-3"></span>Zippers, buttons, cords</li>
                   </ul>
                 </div>
                 
-                <div>
-                  <h4 className="text-lg font-semibold text-primary mb-3">Apparel & Fashion:</h4>
+                    <div className="group p-6 bg-gradient-to-br from-green-50 to-green-100/50 rounded-2xl border border-green-200 hover:border-primary transition-colors duration-300">
+                      <h4 className="text-xl font-bold text-primary mb-4 flex items-center">
+                        <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                        Apparel & Fashion
+                      </h4>
                   <ul className="space-y-2 text-neutral-700">
-                    <li>• Adult & children apparel</li>
-                    <li>• Sportswear, sleepwear, uniforms and workwear</li>
-                    <li>• Baby nursery and maternity clothing</li>
-                    <li>• Fashion accessories, gloves, scarves, jewellery</li>
-                    <li>• Lingeries</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></span>Adult & children apparel</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></span>Sportswear, sleepwear, uniforms and workwear</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></span>Baby, nursery and maternity clothing</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></span>Fashion accessories, gloves, scarves, jewellery</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></span>Costumes</li>
                   </ul>
                 </div>
                 
+                    <div className="group p-6 bg-gradient-to-br from-purple-50 to-purple-100/50 rounded-2xl border border-purple-200 hover:border-primary transition-colors duration-300">
+                      <h4 className="text-xl font-bold text-primary mb-4 flex items-center">
+                        <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                        Leather & Footwear
+                      </h4>
+                      <div className="space-y-3">
+                        <div>
+                          <h5 className="font-semibold text-neutral-800 mb-2">Leather:</h5>
+                          <ul className="space-y-1 text-neutral-700 text-sm">
+                            <li className="flex items-center"><span className="w-1 h-1 bg-purple-500 rounded-full mr-2"></span>Leather</li>
+                            <li className="flex items-center"><span className="w-1 h-1 bg-purple-500 rounded-full mr-2"></span>Leather products, bags, belts, wallets</li>
+                          </ul>
+                        </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-primary mb-3">Leather:</h4>
+                          <h5 className="font-semibold text-neutral-800 mb-2">Footwear:</h5>
+                          <ul className="space-y-1 text-neutral-700 text-sm">
+                            <li className="flex items-center"><span className="w-1 h-1 bg-purple-500 rounded-full mr-2"></span>Men, women, children footwear</li>
+                            <li className="flex items-center"><span className="w-1 h-1 bg-purple-500 rounded-full mr-2"></span>Sports shoes, sneakers, slippers</li>
+                            <li className="flex items-center"><span className="w-1 h-1 bg-purple-500 rounded-full mr-2"></span>Boots, shoes, sandals</li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Right Column */}
+                  <div className="space-y-6">
+                    <div className="group p-6 bg-gradient-to-br from-orange-50 to-orange-100/50 rounded-2xl border border-orange-200 hover:border-primary transition-colors duration-300">
+                      <h4 className="text-xl font-bold text-primary mb-4 flex items-center">
+                        <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                        Home Textiles
+                      </h4>
                   <ul className="space-y-2 text-neutral-700">
-                    <li>• Leather</li>
-                    <li>• Leather products, bags, belts, wallets</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3"></span>Upholstery, mattresses, blankets, cushions, pillows</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3"></span>Bed linen, sheets, curtains</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3"></span>Bathroom linen, towels</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3"></span>Home and kitchen, tablecloths, napkins, tea towels, mittens</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-orange-500 rounded-full mr-3"></span>Carpets, rugs, etc.</li>
                   </ul>
                 </div>
                 
-                <div>
-                  <h4 className="text-lg font-semibold text-primary mb-3">Footwear:</h4>
+                    <div className="p-6 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl border border-primary/20">
+                      <h4 className="text-xl font-bold text-primary mb-4 flex items-center">
+                        <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                        Special Testing Services
+                      </h4>
                   <ul className="space-y-2 text-neutral-700">
-                    <li>• Men, women, children footwear</li>
-                    <li>• Sports shoes, sneakers, slippers</li>
-                    <li>• Boots, shoes, sandals</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></span>Cotton GMO testing</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></span>Antifungal and antimicrobial studies (AATCC 100, ATCC 30)</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></span>Water absorption and UPF Factor</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-primary rounded-full mr-3"></span>Polymer identification through FTIR</li>
                   </ul>
                 </div>
                 
+                    <div className="p-6 bg-gradient-to-br from-neutral-100 to-neutral-200/50 rounded-2xl border border-neutral-300">
+                      <h4 className="text-lg font-bold text-neutral-800 mb-3">Regulatory Coverage</h4>
+                      <p className="text-sm text-neutral-600 leading-relaxed">
+                        Our service covers both local and international regulations including EU (General Product Safety Directive, REACH), US (CPSIA, California&lsquo;s Proposition 65), Canada (CCPSA), and China&lsquo;s GB standards.
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Hardgoods & Toy Testing */}
+          <div className="mb-16">
+            <div className="bg-white rounded-3xl shadow-large border border-neutral-100 overflow-hidden">
+              {/* Header */}
+              <div className="bg-gradient-to-r from-secondary/10 to-accent/10 p-8 border-b border-neutral-200">
+                <div className="flex items-center space-x-4">
+                  <div className="w-16 h-16 bg-secondary rounded-2xl flex items-center justify-center">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.828 14.828a4 4 0 01-5.656 0M9 10h1m4 0h1m-6 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-primary mb-3">Home Textiles:</h4>
-                  <ul className="space-y-2 text-neutral-700">
-                    <li>• Upholstery, mattresses, blankets, cushions, pillows</li>
-                    <li>• Bed linen, sheets, curtains</li>
-                    <li>• Bathroom linen, towels</li>
-                    <li>• House and kitchen, tablecloths, napkins, tea towels, mittens</li>
-                    <li>• Carpets, rugs, etc.</li>
-                  </ul>
+                    <h3 className="text-3xl font-bold text-neutral-900 mb-2">2. Hardgoods & Toy Testing</h3>
+                    <p className="text-lg text-neutral-600">
+                      Comprehensive testing services for toys, decorative and packaging materials & food contact materials.
+                    </p>
                 </div>
               </div>
             </div>
 
-            {/* Toy Testing Services */}
-            <div className="bg-neutral-50 rounded-xl p-8">
-              <h3 className="text-2xl font-bold text-neutral-900 mb-6">2. Toy Testing Services</h3>
-              
-              <div className="space-y-6">
-                <div>
-                  <h4 className="text-lg font-semibold text-primary mb-3">Physical and Mechanical Testing:</h4>
-                  <p className="text-neutral-700 mb-3">Aims to prevent hazards such as small parts, sharp points, edges, cords, etc.</p>
+              {/* Content */}
+              <div className="p-8">
+                <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                  {/* Physical & Mechanical */}
+                  <div className="group p-6 bg-gradient-to-br from-red-50 to-red-100/50 rounded-2xl border border-red-200 hover:border-primary transition-colors duration-300">
+                    <h4 className="text-xl font-bold text-primary mb-4 flex items-center">
+                      <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                      Physical & Mechanical Testing
+                    </h4>
+                    <p className="text-sm text-neutral-600 mb-4">Prevents hazards such as small parts, sharp points and edges, cords, etc.</p>
                   <ul className="space-y-2 text-neutral-700 text-sm">
-                    <li>• EU Toy Safety Directive 2009/48/EC (EN 71-1, EN 71-8)</li>
-                    <li>• ASTM F963 – safety of toys</li>
-                    <li>• CPSCIA</li>
-                    <li>• ISO 8124-1 – mechanical and physical properties of toys</li>
+                      <li className="flex items-center"><span className="w-1 h-1 bg-red-500 rounded-full mr-2"></span>EU Toy Safety Directive 2009/48/EC (EN 71-1, EN 71-8)</li>
+                      <li className="flex items-center"><span className="w-1 h-1 bg-red-500 rounded-full mr-2"></span>ASTM F963 – safety of toys</li>
+                      <li className="flex items-center"><span className="w-1 h-1 bg-red-500 rounded-full mr-2"></span>CPSIA</li>
+                      <li className="flex items-center"><span className="w-1 h-1 bg-red-500 rounded-full mr-2"></span>ISO 8124-1 – mechanical properties</li>
                   </ul>
                 </div>
                 
-                <div>
-                  <h4 className="text-lg font-semibold text-primary mb-3">Chemical Testing:</h4>
+                  {/* Chemical Testing */}
+                  <div className="group p-6 bg-gradient-to-br from-yellow-50 to-yellow-100/50 rounded-2xl border border-yellow-200 hover:border-primary transition-colors duration-300">
+                    <h4 className="text-xl font-bold text-primary mb-4 flex items-center">
+                      <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                      Chemical Testing
+                    </h4>
                   <ul className="space-y-2 text-neutral-700 text-sm">
-                    <li>• EU Toy Safety Directive 2009/48/EC (EN 71-3, EN 71-4, EN 71-5, EN 71-7, EN 71-12)</li>
-                    <li>• ASTM F963 – safety of toys</li>
-                    <li>• CPSCIA</li>
-                    <li>• REACH – migration of certain elements</li>
-                    <li>• REACH and other international chemical regulations testing</li>
+                      <li className="flex items-center"><span className="w-1 h-1 bg-yellow-500 rounded-full mr-2"></span>EU Toy Safety Directive (EN 71-3, EN 71-4, EN 71-5, EN 71-7, EN 71-12)</li>
+                      <li className="flex items-center"><span className="w-1 h-1 bg-yellow-500 rounded-full mr-2"></span>ASTM F963 – safety of toys</li>
+                      <li className="flex items-center"><span className="w-1 h-1 bg-yellow-500 rounded-full mr-2"></span>CPSIA</li>
+                      <li className="flex items-center"><span className="w-1 h-1 bg-yellow-500 rounded-full mr-2"></span>ISO 8124-3 – migration of elements</li>
+                      <li className="flex items-center"><span className="w-1 h-1 bg-yellow-500 rounded-full mr-2"></span>REACH and international regulations</li>
                   </ul>
                 </div>
                 
+                  {/* Flammability & Electrical */}
+                  <div className="group p-6 bg-gradient-to-br from-indigo-50 to-indigo-100/50 rounded-2xl border border-indigo-200 hover:border-primary transition-colors duration-300">
+                    <h4 className="text-xl font-bold text-primary mb-4 flex items-center">
+                      <div className="w-2 h-2 bg-primary rounded-full mr-3"></div>
+                      Flammability & Electrical
+                    </h4>
+                    <div className="space-y-4">
                 <div>
-                  <h4 className="text-lg font-semibold text-primary mb-3">Flammability:</h4>
-                  <ul className="space-y-2 text-neutral-700 text-sm">
-                    <li>• EN 71-2 – flammability</li>
-                    <li>• ASTM F963 – the safety of toys</li>
-                    <li>• CPSCIA</li>
-                    <li>• ISO 8124-2 – flammability</li>
+                        <h5 className="font-semibold text-neutral-800 mb-2">Flammability:</h5>
+                        <ul className="space-y-1 text-neutral-700 text-sm">
+                          <li className="flex items-center"><span className="w-1 h-1 bg-indigo-500 rounded-full mr-2"></span>EN 71-2, ASTM F963, CPSIA</li>
+                          <li className="flex items-center"><span className="w-1 h-1 bg-indigo-500 rounded-full mr-2"></span>ISO 8124-2</li>
                   </ul>
                 </div>
-                
                 <div>
-                  <h4 className="text-lg font-semibold text-primary mb-3">Electrical and Electronics Safety:</h4>
-                  <ul className="space-y-2 text-neutral-700 text-sm">
-                    <li>• IEC 62115</li>
-                    <li>• ANSI/UL 696</li>
+                        <h5 className="font-semibold text-neutral-800 mb-2">Electrical Safety:</h5>
+                        <ul className="space-y-1 text-neutral-700 text-sm">
+                          <li className="flex items-center"><span className="w-1 h-1 bg-indigo-500 rounded-full mr-2"></span>IEC 62115</li>
+                          <li className="flex items-center"><span className="w-1 h-1 bg-indigo-500 rounded-full mr-2"></span>ANSI/UL 696</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Packaging and Food Contact Material Testing */}
-          <div className="mt-12 bg-neutral-50 rounded-xl p-8">
-            <h3 className="text-2xl font-bold text-neutral-900 mb-6">3. Packaging and Food Contact Material Testing</h3>
-            <p className="text-lg text-neutral-700 leading-relaxed">
-              Specialized testing services for food contact and packaging materials, including overall migration, specific migration, leachable contents, heavy metals, REACH, RoHS testing, covering Indian and international standards (e.g., CentreFIsh). We also develop testing plans for single articles or complex combinations of raw materials across a wide product portfolio to avoid repetitive testing.
+                {/* Toy Categories */}
+                <div className="mt-8 p-6 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-2xl border border-primary/20">
+                  <h4 className="text-xl font-bold text-primary mb-4">Comprehensive Toy Categories Covered</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-neutral-700">
+                    <div className="space-y-1">
+                      <div className="font-semibold text-neutral-800">Toys:</div>
+                      <div>• Dolls, plush</div>
+                      <div>• Wooden, metal, plastic</div>
+                      <div>• Stationary, paints</div>
+                    </div>
+                    <div className="space-y-1">
+                      <div className="font-semibold text-neutral-800">Educational:</div>
+                      <div>• Cosmetic toys</div>
+                      <div>• Chemical sets</div>
+                      <div>• Costumes, disguises</div>
+                    </div>
+                    <div className="space-y-1">
+                      <div className="font-semibold text-neutral-800">Electronic:</div>
+                      <div>• Electric toys</div>
+                      <div>• Radio controlled</div>
+                      <div>• Electronic games</div>
+                    </div>
+                    <div className="space-y-1">
+                      <div className="font-semibold text-neutral-800">Baby Products:</div>
+                      <div>• Baby apparel & footwear</div>
+                      <div>• Cots, bassinets</div>
+                      <div>• Strollers</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Packaging and Food Contact Material */}
+          <div>
+            <div className="bg-white rounded-3xl shadow-large border border-neutral-100 overflow-hidden">
+              {/* Header */}
+              <div className="bg-gradient-to-r from-accent/10 to-primary/10 p-8 border-b border-neutral-200">
+                <div className="flex items-center space-x-4">
+                  <div className="w-16 h-16 bg-accent rounded-2xl flex items-center justify-center">
+                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h3 className="text-3xl font-bold text-neutral-900 mb-2">3. Packaging & Food Contact Material Testing</h3>
+                    <p className="text-lg text-neutral-600">
+                      EuroAsia specialized testing services for food contact and packaging materials with cost-effective, bespoke testing plans.
             </p>
+          </div>
+        </div>
+              </div>
+
+              {/* Content */}
+              <div className="p-8">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                  <div className="space-y-6">
+                    <div className="p-6 bg-gradient-to-br from-green-50 to-green-100/50 rounded-2xl border border-green-200">
+                      <h4 className="text-xl font-bold text-primary mb-4">Testing Services Include:</h4>
+                      <ul className="space-y-2 text-neutral-700">
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></span>Overall migration</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></span>Specific migration</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></span>Leachable contents</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></span>Heavy metals</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></span>REACH testing</li>
+                        <li className="flex items-center"><span className="w-1.5 h-1.5 bg-green-500 rounded-full mr-3"></span>NIAS testing</li>
+                      </ul>
+                    </div>
+
+                    <div className="p-6 bg-gradient-to-br from-blue-50 to-blue-100/50 rounded-2xl border border-blue-200">
+                      <h4 className="text-xl font-bold text-primary mb-4">Standards Coverage:</h4>
+                      <p className="text-neutral-700 leading-relaxed">
+                        Covering Indian and international standards with comprehensive regulatory compliance for food contact materials and packaging.
+                      </p>
+                    </div>
+          </div>
+          
+                  <div className="p-6 bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl border border-primary/20">
+                    <h4 className="text-xl font-bold text-primary mb-4">Bespoke Testing Plans</h4>
+                    <p className="text-neutral-700 leading-relaxed mb-4">
+                      Cost-effective, bespoke testing plans can be defined for single articles or for complex combinations of raw materials used across a wide product portfolio.
+                    </p>
+                    <div className="p-4 bg-white rounded-xl border border-neutral-200">
+                      <h5 className="font-semibold text-neutral-800 mb-2">Benefits:</h5>
+                      <ul className="space-y-1 text-sm text-neutral-600">
+                        <li>• Avoid repetitive testing of the same material</li>
+                        <li>• Cost-effective solutions</li>
+                        <li>• Comprehensive portfolio coverage</li>
+                        <li>• Single article or complex combinations</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+                </div>
+              </div>
           </div>
         </div>
       </section>
 
       {/* Standards & Certifications */}
-      <section className="py-16 bg-neutral-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-neutral-900 mb-4">Standards & Certifications</h2>
-            <p className="text-lg text-neutral-600">
-              We help you comply with the most important consumer product standards
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {standards.map((standard, index) => (
-              <div key={index} className="bg-white rounded-lg p-6 text-center shadow-soft">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-neutral-900">{standard}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Concluding Section */}
       <section className="py-16 bg-white">
@@ -335,12 +485,12 @@ export default function ConsumerProductsPage() {
             >
               Get Quote
             </Link>
-            <Link
+            {/* <Link
               href="/quote"
               className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary transition-colors duration-200 font-semibold"
             >
               Request Information
-            </Link>
+            </Link> */}
           </div>
         </div>
       </section>

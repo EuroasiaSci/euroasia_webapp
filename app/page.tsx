@@ -1,44 +1,11 @@
-import type { Metadata } from "next";
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
 import WhyChooseUs from './components/WhyChooseUs';
 import OurServices from './components/OurServices';
 import IndustriesWeServe from './components/IndustriesWeServe';
-// import ClientTestimonials from './components/ClientTestimonials';
+import SustainableSupplyChain from './components/SustainableSupplyChain';
 
-export const metadata: Metadata = {
-  title: "Home",
-  description: "EUROASIA - Leading laboratory testing services in India. ISO 17025 certified testing for Food & Feed, Consumer Products, Cosmetics, and Pharmaceutical industries. 99.9% accuracy rate with 50+ satisfied clients.",
-  keywords: [
-    "lab testing India",
-    "laboratory services Mumbai",
-    "quality testing certification",
-    "food testing services",
-    "consumer product testing",
-    "cosmetics testing",
-    "pharmaceutical testing",
-    "ISO 17025 certified lab",
-    "EUROASIA testing services",
-    "quality assurance India"
-  ],
-  openGraph: {
-    title: "EUROASIA - Professional Lab Testing Services | Quality Testing & Certification",
-    description: "Leading laboratory testing services in India. ISO 17025 certified testing for Food & Feed, Consumer Products, Cosmetics, and Pharmaceutical industries.",
-    url: "https://euroasia.com",
-    images: [
-      {
-        url: "/images/euroasia_logo-removebg.png",
-        width: 1200,
-        height: 630,
-        alt: "EUROASIA Lab Testing Services",
-      },
-    ],
-  },
-  alternates: {
-    canonical: "https://euroasia.com",
-  },
-};
 
 export default function Home() {
   return (
@@ -49,6 +16,7 @@ export default function Home() {
         <WhyChooseUs />
         <OurServices />
         <IndustriesWeServe />
+        <SustainableSupplyChain />
         {/* <ClientTestimonials /> */}
         
         {/* Bottom CTA Section */}

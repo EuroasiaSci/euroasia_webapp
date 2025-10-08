@@ -57,14 +57,27 @@ export default function ContactPage() {
             {/* Email Card */}
             <div className="bg-white rounded-xl p-8 shadow-soft border border-neutral-200">
               <div className="flex items-start space-x-4">
-                <div className="p-3 bg-primary/10 rounded-full">
+                <div className="p-3 bg-primary/10 rounded-full flex-shrink-0">
                   <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-2">Email Address</h3>
-                  <p className="text-neutral-600">enquiry.es@euroasiasl.com</p>
+                  <h3 className="text-lg font-semibold text-neutral-900 mb-3">Email Addresses</h3>
+                  <div className="space-y-2">
+                    <div>
+                      <p className="text-sm font-medium text-neutral-700">Lab Testing:</p>
+                      <a href="mailto:enquiry.esi@euroasiasci.com" className="text-neutral-600 hover:text-primary transition-colors">
+                        enquiry.esi@euroasiasci.com
+                      </a>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-neutral-700">Inspection:</p>
+                      <a href="mailto:inspection.esi@euroasiasci.com" className="text-neutral-600 hover:text-primary transition-colors">
+                        inspection.esi@euroasiasci.com
+                      </a>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -79,10 +92,21 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-neutral-900 mb-2">Location</h3>
-                  <p className="text-neutral-600">
-                    D-25, Info City - II, Sector - 34, Gurugram, Haryana - 122001
-                  </p>
+                  <h3 className="text-lg font-semibold text-neutral-900 mb-3">Locations</h3>
+                  <div className="space-y-3">
+                    <div>
+                      <p className="text-sm font-medium text-neutral-700 mb-1">Gurugram Office:</p>
+                      <p className="text-neutral-600">
+                        D-25, 1st Floor, Info City-2, Sector - 33, Gurugram, Haryana - 122001, India
+                      </p>
+                    </div>
+                    <div>
+                      <p className="text-sm font-medium text-neutral-700 mb-1">Bengaluru Office:</p>
+                      <p className="text-neutral-600">
+                        48/2, Hosapalaya, Muneshwara Nagar, Bengaluru, Karnataka 560068, India
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

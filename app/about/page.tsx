@@ -26,12 +26,44 @@ export default function AboutUs() {
         </div>
       </section>
 
+      {/* Inspirational Quote */}
+      <section className="py-16 bg-gradient-to-br from-primary/5 via-white to-secondary/5">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="relative">
+            {/* Quote Icon */}
+            <div className="absolute -top-4 -left-4 text-primary/20">
+              <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
+              </svg>
+            </div>
+            
+            <div className="relative bg-white rounded-2xl shadow-large p-8 sm:p-12 border border-neutral-100">
+              <blockquote className="text-center">
+                <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-neutral-900 mb-6 leading-tight">
+                &quot;We exist to create experiences where passion and purpose come together.&quot;
+                </p>
+                <div className="flex items-center justify-center space-x-2">
+                  <div className="w-12 h-1 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
+                  <div className="w-2 h-2 bg-primary rounded-full"></div>
+                </div>
+              </blockquote>
+            </div>
+
+            {/* Decorative Elements */}
+            <div className="absolute -bottom-4 -right-4 text-secondary/20">
+              <svg className="w-16 h-16" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M9.983 3v7.391c0 5.704-3.731 9.57-8.983 10.609l-.995-2.151c2.432-.917 3.995-3.638 3.995-5.849h-4v-10h9.983zm14.017 0v7.391c0 5.704-3.748 9.57-9 10.609l-.996-2.151c2.433-.917 3.996-3.638 3.996-5.849h-3.983v-10h9.983z" />
+              </svg>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Company Introduction */}
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-lg text-neutral-700 leading-relaxed">
-            At EuroAsia, we are dedicated to providing a wide array of scientific services to meet the unique needs of our clients. We specialize in an extensive range of areas, including Food & Feed, Consumer, Toys, Food, Environmental, Pharmaceutical, and Cosmetic product testing. We have immense pride in our position as an independent market player, particularly in the field of Consumer Products of all sizes. Our commitment to unwavering as we strive to deliver top-quality services, accurate results within stipulated timelines, and expert guidance. EuroAsia is defined by our highly qualified and dedicated staff, who are always ready to support your scientific needs.
-          </p>
+          At EuroAsia, we are dedicated to providing a wide array of scientific services to meet the unique needs of our clients. We specialize in an extensive range of areas, including Textiles, Footwear, Toys, Food, and Cosmetic product’s testing &amp; inspection. We take immense pride in our leadership as an independent market player, particularly in the field of Consumer Products quality assurance.</p>
         </div>
       </section>
 
@@ -80,8 +112,13 @@ export default function AboutUs() {
                 <h3 className="text-2xl font-bold text-neutral-900">Our Mission</h3>
               </div>
               <p className="text-neutral-600 leading-relaxed">
-                Our mission is to empower consumers and businesses with accurate, unbiased, and comprehensive testing services. We are committed to providing transparent and objective assessments of products and services, ensuring informed decision-making and fostering trust in the marketplace.
-              </p>
+              Our mission is to empower consumers and
+businesses with accurate, unbiased, and
+comprehensive testing &amp; Inspection services. We
+are committed to providing transparent and
+objective assessments of products and services,
+ensuring informed decision-making and fostering
+trust in the marketplace.</p>
             </div>
 
             {/* Vision Card */}
@@ -95,8 +132,13 @@ export default function AboutUs() {
                 <h3 className="text-2xl font-bold text-neutral-900">Our Vision</h3>
               </div>
               <p className="text-neutral-600 leading-relaxed">
-                Our vision is to be the global leader in testing services, recognized for our unwavering dedication to quality, integrity, and innovation. We strive to create a world where individuals and organizations make confident choices based on reliable testing information, contributing to safer, more reliable, and higher-quality products and services across industries.
-              </p>
+              Our vision is to be the global leader in testing &amp;
+inspection services, recognized for our unwavering
+dedication to quality, integrity, and innovation. We
+strive to create a world where individuals and
+organizations make confident choices based on reliable
+testing &amp; inspection information, contributing to safer,
+more reliable, and higher-quality products and services across industries.</p>
             </div>
           </div>
         </div>

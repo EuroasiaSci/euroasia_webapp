@@ -64,13 +64,6 @@ export default function CosmeticsPersonalCarePage() {
     }
   ];
 
-  const regulations = [
-    "EU Cosmetics Regulation 1223/2009",
-    "FDA Cosmetic Regulations",
-    "ISO 22716 - Cosmetics GMP",
-    "CPNP - Cosmetic Products Notification Portal",
-    "SCCS - Scientific Committee on Consumer Safety"
-  ];
 
   return (
     <div className="min-h-screen bg-white">
@@ -80,7 +73,7 @@ export default function CosmeticsPersonalCarePage() {
       <section className="relative h-96 bg-gradient-to-r from-primary/90 to-secondary/90 flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-black/20"></div>
         <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-5xl font-bold">Elevate Your Cosmetics with EuroAsia Comprehensive Testing Services</h1>
+          <h1 className="text-5xl font-bold">Cosmetics and Personal Care</h1>
           <p className="text-xl mt-4 max-w-2xl mx-auto">
             Comprehensive testing solutions ensuring safety, quality, and compliance across all cosmetic categories
           </p>
@@ -148,12 +141,14 @@ export default function CosmeticsPersonalCarePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="bg-white rounded-xl p-6 shadow-soft border border-neutral-200 hover:shadow-medium transition-shadow duration-300">
-                <div className="p-3 bg-primary/10 rounded-full w-fit mb-4">
+              <div key={index} className="group p-8 rounded-xl border border-neutral-200 hover:border-primary hover:shadow-medium transition-all duration-300 hover:-translate-y-1">
+                <div className="flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-xl mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
                   {service.icon}
                 </div>
-                <h3 className="text-xl font-bold text-neutral-900 mb-3">{service.title}</h3>
-                <p className="text-neutral-600 leading-relaxed">{service.description}</p>
+                <h3 className="text-xl font-semibold text-neutral-900 mb-4 group-hover:text-primary transition-colors duration-300">
+                  {service.title}
+                </h3>
+                <p className="text-sm text-neutral-600 leading-relaxed">{service.description}</p>
               </div>
             ))}
           </div>
@@ -161,29 +156,7 @@ export default function CosmeticsPersonalCarePage() {
       </section>
 
       {/* Regulations & Standards */}
-      <section className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-neutral-900 mb-4">Regulations & Standards</h2>
-            <p className="text-lg text-neutral-600">
-              We help you comply with the most important cosmetics regulations worldwide
-            </p>
-          </div>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {regulations.map((regulation, index) => (
-              <div key={index} className="bg-neutral-50 rounded-lg p-6 text-center">
-                <div className="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                  </svg>
-                </div>
-                <h3 className="font-semibold text-neutral-900">{regulation}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+     
 
       {/* EuroAsia Partnership Section */}
       <section className="py-16 bg-white">
@@ -224,12 +197,7 @@ export default function CosmeticsPersonalCarePage() {
             >
               Get Quote
             </Link>
-            <Link
-              href="/quote"
-              className="border-2 border-white text-white px-8 py-4 rounded-lg hover:bg-white hover:text-primary transition-colors duration-200 font-semibold"
-            >
-              Request Information
-            </Link>
+           
           </div>
         </div>
       </section>

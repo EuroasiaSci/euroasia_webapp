@@ -1,23 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { DM_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const dmSans = DM_Sans({
+  variable: "--font-dm-sans",
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
   title: {
-    default: "EUROASIA - Professional Lab Testing Services | Quality Testing & Certification",
+    default: "EUROASIA | Testing, Inspection & Certification Services |",
     template: "%s | EUROASIA Lab Testing Services"
   },
-  description: "EUROASIA provides comprehensive laboratory testing services across multiple industries including Food & Feed, Consumer Products, Cosmetics, and Pharmaceutical. ISO 17025 certified with 99.9% accuracy rate.",
+  description: "Explore our comprehensive range of testing, inspection, audit, and certification services. We ensure safety, quality, and compliance for businesses across industries.",
   keywords: [
     "lab testing",
     "laboratory services", 
@@ -54,30 +51,30 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'en_IN',
-    url: 'https://euroasia.com',
-    siteName: 'EUROASIA Lab Testing Services',
-    title: 'EUROASIA - Professional Lab Testing Services | Quality Testing & Certification',
-    description: 'EUROASIA provides comprehensive laboratory testing services across multiple industries including Food & Feed, Consumer Products, Cosmetics, and Pharmaceutical. ISO 17025 certified with 99.9% accuracy rate.',
+    url: 'https://euroasiasci.com',
+    siteName: 'EUROASIA Scientific India Pvt. Ltd.',
+    title: 'EUROASIA | Testing, Inspection & Certification Services |',
+    description: "Explore our comprehensive range of testing, inspection, audit, and certification services. We ensure safety, quality, and compliance for businesses across industries.",
     images: [
       {
         url: '/images/euroasia_logo-removebg.png',
         width: 1200,
         height: 630,
-        alt: 'EUROASIA Lab Testing Services Logo',
+        alt: 'EUROASIA Scientific India Pvt. Ltd. Logo',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'EUROASIA - Professional Lab Testing Services',
-    description: 'Comprehensive laboratory testing services across multiple industries. ISO 17025 certified with 99.9% accuracy rate.',
+    title: 'EUROASIA Scientific India Pvt. Ltd.',
+    description: 'Explore our comprehensive range of testing, inspection, audit, and certification services. We ensure safety, quality, and compliance for businesses across industries.',
     images: ['/images/euroasia_logo-removebg.png'],
   },
   verification: {
     google: 'your-google-verification-code',
   },
   alternates: {
-    canonical: 'https://euroasia.com',
+    canonical: 'https://euroasiasci.com',
   },
   icons: {
     icon: [
@@ -122,7 +119,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${dmSans.variable} antialiased`}
       >
         {/* Structured Data */}
         <script
@@ -133,30 +130,37 @@ export default function RootLayout({
               "@type": "Organization",
               "name": "EUROASIA Scientific India Pvt. Ltd.",
               "alternateName": "EUROASIA",
-              "url": "https://euroasia.com",
-              "logo": "https://euroasia.com/images/euroasia_logo-removebg.png",
-              "description": "EUROASIA provides comprehensive laboratory testing services across multiple industries including Food & Feed, Consumer Products, Cosmetics, and Pharmaceutical. ISO 17025 certified with 99.9% accuracy rate.",
+                "url": "https://euroasiasci.com",
+              "logo": "https://euroasiasci.com/images/euroasia_logo-removebg.png",
+              "description": "Explore our comprehensive range of testing, inspection, audit, and certification services. We ensure safety, quality, and compliance for businesses across industries.",
               "foundingDate": "2022",
               "address": {
                 "@type": "PostalAddress",
-                "streetAddress": "123 Business Park, Industrial Area",
-                "addressLocality": "Mumbai",
-                "postalCode": "400001",
-                "addressRegion": "Maharashtra",
+                "streetAddress": "D-25, 1st Floor, Info City-2, Sector - 33",
+                "addressLocality": "Gurugram",
+                "postalCode": "122001",
+                "addressRegion": "Haryana",
                 "addressCountry": "IN"
               },
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "telephone": "+91-XXXX-XXXXXX",
-                "contactType": "customer service",
-                "email": "info@euroasia.com"
-              },
+              "contactPoint": [
+                {
+                  "@type": "ContactPoint",
+                  "contactType": "customer service",
+                  "email": "enquiry.esi@euroasiasci.com"
+                },
+                {
+                  "@type": "ContactPoint",
+                  "contactType": "customer service",
+                  "email": "inspection.esi@euroasiasci.com",
+                  "description": "Inspection Services"
+                }
+              ],
               "sameAs": [
                 "https://www.linkedin.com/company/euroasiasci/posts/?feedView=all"
               ],
               "hasCredential": {
                 "@type": "EducationalOccupationalCredential",
-                "name": "ISO 17025 Certification",
+                  "name": "ISO 17025 Certification",
                 "description": "International standard for testing and calibration laboratories"
               },
               "serviceType": [

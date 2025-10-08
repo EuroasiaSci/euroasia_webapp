@@ -4,6 +4,13 @@ import { useState, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
+interface NavigationItem {
+  name: string;
+  href?: string;
+  hasDropdown?: boolean;
+  dropdownItems?: { name: string; href: string }[];
+}
+
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
@@ -23,13 +30,12 @@ export default function Header() {
     }, 150); // 150ms delay
   };
 
-  const navigation = [
+  const navigation: NavigationItem[] = [
     { name: 'Home', href: '/' },
     { name: 'About Us', href: '/about' },
     { name: 'Services', href: '/services' },
     { 
       name: 'Industries', 
-      href: '/industries',
       hasDropdown: true,
       dropdownItems: [
         { name: 'Food & Feed', href: '/industries/food-feed' },
@@ -42,7 +48,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-white shadow-soft sticky top-0 z-50">
+    <header className="bg-white/80 backdrop-blur-md shadow-soft sticky top-0 z-50 border-b border-neutral-200/50">
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-2 sm:py-4">
         <div className="flex justify-between items-center min-h-[60px] sm:h-16">
           {/* Logo */}
@@ -69,8 +75,8 @@ export default function Header() {
                     onMouseEnter={handleMouseEnter}
                     onMouseLeave={handleMouseLeave}
                   >
-                    <Link
-                      href={item.href}
+                    <div
+                     
                       className="text-neutral-700 hover:text-primary transition-colors duration-200 font-medium flex items-center"
                     >
                       {item.name}
@@ -89,19 +95,19 @@ export default function Header() {
                           d="M19 9l-7 7-7-7"
                         />
                       </svg>
-                    </Link>
+                    </div>
                     
                     {/* Dropdown Menu */}
                     {isIndustriesOpen && (
                       <div 
-                        className="absolute top-full left-0 mt-1 w-64 bg-white rounded-lg shadow-large border border-neutral-200 py-2 z-50"
+                        className="absolute top-full left-0 mt-1 w-64 bg-white/95 backdrop-blur-md rounded-lg shadow-large border border-neutral-200 py-2 z-50"
                         onMouseEnter={handleMouseEnter}
                         onMouseLeave={handleMouseLeave}
                       >
                         {item.dropdownItems?.map((dropdownItem) => (
                           <Link
                             key={dropdownItem.name}
-                            href={dropdownItem.href}
+                            href={dropdownItem.href || '/'}
                             className="block px-4 py-3 text-neutral-700 hover:text-primary hover:bg-neutral-50 transition-colors duration-200 font-medium"
                           >
                             {dropdownItem.name}
@@ -112,7 +118,7 @@ export default function Header() {
                   </div>
                 ) : (
                   <Link
-                    href={item.href}
+                    href={item.href || '/'}
                     className="text-neutral-700 hover:text-primary transition-colors duration-200 font-medium flex items-center"
                   >
                     {item.name === 'Home' && (
@@ -189,7 +195,7 @@ export default function Header() {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-3 pt-3 pb-4 space-y-2 bg-white border-t border-neutral-200">
+            <div className="px-3 pt-3 pb-4 space-y-2 bg-white/95 backdrop-blur-md border-t border-neutral-200">
               {navigation.map((item) => (
                 <div key={item.name}>
                   {item.hasDropdown ? (
@@ -220,7 +226,7 @@ export default function Header() {
                           {item.dropdownItems?.map((dropdownItem) => (
                             <Link
                               key={dropdownItem.name}
-                              href={dropdownItem.href}
+                              href={dropdownItem.href || '/'}
                               className="block px-3 py-2 text-neutral-600 hover:text-primary hover:bg-neutral-50 rounded-md transition-colors duration-200 font-medium"
                               onClick={() => setIsMenuOpen(false)}
                             >
@@ -232,7 +238,7 @@ export default function Header() {
                     </div>
                   ) : (
                     <Link
-                      href={item.href}
+                      href={item.href || '/'}
                       className="block px-3 py-2 text-neutral-700 hover:text-primary hover:bg-neutral-50 rounded-md transition-colors duration-200 font-medium flex items-center"
                       onClick={() => setIsMenuOpen(false)}
                     >
