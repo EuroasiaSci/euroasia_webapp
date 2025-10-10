@@ -1,21 +1,28 @@
 import Link from 'next/link';
 import Image from 'next/image';
 
+interface FooterLink {
+  name: string;
+  href: string;
+  external?: boolean;
+}
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
-  const footerLinks = {
+  const footerLinks: { company: FooterLink[]; services: FooterLink[]; industries: FooterLink[]; support: FooterLink[] } = {
     company: [
       { name: 'About Us', href: '/about' },
+      { name: 'Our Presence', href: '/our-presence' },
       { name: 'Quality Policy', href: '/quality-policy' },
-      { name: 'Impartiality Policy', href: '/euroasiarsj-impartiality-policy' },
-      { name: 'Company Brochure', href: '/files/Broucher.docx', external: true },
+      { name: 'Impartiality Policy', href: '/euroasia-impartiality-policy' },
+      // { name: 'Company Brochure', href: '/files/Broucher.docx', external: true },
     ],
     services: [
       { name: 'Testing Services', href: '/services' },
       { name: 'Inspection Services', href: '/services' },
       { name: 'Certification Services', href: '/services' },
-      { name: 'Audit Services', href: '/services' },
+      // { name: 'Audit Services', href: '/services' },
     ],
     industries: [
       { name: 'Food & Feed', href: '/industries/food-feed' },
@@ -32,7 +39,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-white border-t border-neutral-200">
+    <footer className="border-t border-neutral-200" style={{backgroundColor: '#250051'}}>
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-8 sm:py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8">
           {/* Company Info */}
@@ -46,40 +53,40 @@ export default function Footer() {
                 className="h-8 sm:h-10 lg:h-12 w-auto"
               />
             </div>
-            <p className="text-neutral-600 mb-4 sm:mb-6 max-w-md text-sm sm:text-base">
+            <p className="text-white/80 mb-4 sm:mb-6 max-w-md text-sm sm:text-base">
             We exist to create experiences where passion and purpose come together.
             </p>
             
             {/* Contact Information */}
             <div className="mb-4 sm:mb-6 space-y-3">
               <div className="flex items-start space-x-3">
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white/80 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                 </svg>
-                <div className="text-neutral-600 text-xs sm:text-sm">
-                  <p className="font-medium text-neutral-900">Address:</p>
+                <div className="text-white/80 text-xs sm:text-sm">
+                  <p className="font-medium text-white">Address:</p>
                   <p>D-25, 1st Floor, Info City-2,</p>
                   <p>Sector - 33, Gurugram, Haryana - 122001, India</p>
                 </div>
               </div>
               
               <div className="flex items-start space-x-3">
-                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-primary mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white/80 mt-0.5 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
-                <div className="text-neutral-600 text-xs sm:text-sm">
-                  <p className="font-medium text-neutral-900 mb-1">Email:</p>
+                <div className="text-white/80 text-xs sm:text-sm">
+                  <p className="font-medium text-white mb-1">Email:</p>
                   <div className="space-y-1">
                     <div>
-                      <span className="text-neutral-700 font-medium">Lab Testing: </span>
-                      <a href="mailto:enquiry.esi@euroasiasci.com" className="hover:text-primary transition-colors duration-200">
+                      <span className="text-white/90 font-medium">Lab Testing: </span>
+                      <a href="mailto:enquiry.esi@euroasiasci.com" className="hover:text-white transition-colors duration-200">
                         enquiry.esi@euroasiasci.com
                       </a>
                     </div>
                     <div>
-                      <span className="text-neutral-700 font-medium">Inspection: </span>
-                      <a href="mailto:inspection.esi@euroasiasci.com" className="hover:text-primary transition-colors duration-200">
+                      <span className="text-white/90 font-medium">Inspection: </span>
+                      <a href="mailto:inspection.esi@euroasiasci.com" className="hover:text-white transition-colors duration-200">
                         inspection.esi@euroasiasci.com
                       </a>
                     </div>
@@ -93,7 +100,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/company/euroasiasci/posts/?feedView=all"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-neutral-600 hover:text-primary transition-colors duration-200"
+                className="text-white/80 hover:text-white transition-colors duration-200"
                 aria-label="LinkedIn"
               >
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
@@ -105,7 +112,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-neutral-900">Company</h3>
+            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-white">Company</h3>
             <ul className="space-y-1 sm:space-y-2">
               {footerLinks.company.map((link) => (
                 <li key={link.name}>
@@ -114,14 +121,14 @@ export default function Footer() {
                       href={link.href}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-neutral-600 hover:text-primary transition-colors duration-200 text-sm sm:text-base"
+                      className="text-white/80 hover:text-white transition-colors duration-200 text-sm sm:text-base"
                     >
                       {link.name}
                     </a>
                   ) : (
                     <Link
                       href={link.href}
-                      className="text-neutral-600 hover:text-primary transition-colors duration-200 text-sm sm:text-base"
+                      className="text-white/80 hover:text-white transition-colors duration-200 text-sm sm:text-base"
                     >
                       {link.name}
                     </Link>
@@ -132,13 +139,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-neutral-900">Services</h3>
+            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-white">Services</h3>
             <ul className="space-y-1 sm:space-y-2">
               {footerLinks.services.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-neutral-600 hover:text-primary transition-colors duration-200 text-sm sm:text-base"
+                    className="text-white/80 hover:text-white transition-colors duration-200 text-sm sm:text-base"
                   >
                     {link.name}
                   </Link>
@@ -148,13 +155,13 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-neutral-900">Industries</h3>
+            <h3 className="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-white">Industries</h3>
             <ul className="space-y-1 sm:space-y-2">
               {footerLinks.industries.map((link) => (
                 <li key={link.name}>
                   <Link
                     href={link.href}
-                    className="text-neutral-600 hover:text-primary transition-colors duration-200 text-sm sm:text-base"
+                    className="text-white/80 hover:text-white transition-colors duration-200 text-sm sm:text-base"
                   >
                     {link.name}
                   </Link>
@@ -167,13 +174,13 @@ export default function Footer() {
         {/* Bottom Section */}
         <div className="border-t border-neutral-200 mt-8 sm:mt-12 pt-6 sm:pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0">
-            <div className="text-neutral-500 text-xs sm:text-sm text-center sm:text-left">
+            <div className="text-white/70 text-xs sm:text-sm text-center sm:text-left">
               © {currentYear} Euroasia Scientific India Pvt. Ltd. All rights reserved.
             </div>
             <div className="flex space-x-4 sm:space-x-6">
               <Link
                 href="/privacy"
-                className="text-neutral-500 hover:text-primary text-xs sm:text-sm transition-colors duration-200"
+                className="text-white/70 hover:text-white text-xs sm:text-sm transition-colors duration-200"
               >
                 Privacy Policy
               </Link>

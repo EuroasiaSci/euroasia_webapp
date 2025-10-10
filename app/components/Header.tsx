@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 
@@ -14,6 +14,8 @@ interface NavigationItem {
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isIndustriesOpen, setIsIndustriesOpen] = useState(false);
+  const [isHeaderVisible, setIsHeaderVisible] = useState(true);
+  const lastScrollY = useRef(0);
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   const handleMouseEnter = () => {
@@ -29,6 +31,36 @@ export default function Header() {
       setIsIndustriesOpen(false);
     }, 150); // 150ms delay
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+      
+      // Always show header at the very top
+      if (currentScrollY <= 10) {
+        setIsHeaderVisible(true);
+      }
+      // Show header when scrolling up
+      else if (currentScrollY < lastScrollY.current) {
+        setIsHeaderVisible(true);
+      } 
+      // Hide header when scrolling down (but not at the very top)
+      else if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
+        setIsHeaderVisible(false);
+      }
+      
+      lastScrollY.current = currentScrollY;
+    };
+
+    // Set initial scroll position
+    lastScrollY.current = window.scrollY;
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   const navigation: NavigationItem[] = [
     { name: 'Home', href: '/' },
@@ -48,7 +80,9 @@ export default function Header() {
   ];
 
   return (
-    <header className="bg-white/80 backdrop-blur-md shadow-soft sticky top-0 z-50 border-b border-neutral-200/50">
+    <header className={`bg-white/80 backdrop-blur-md shadow-soft sticky top-0 z-50 border-b border-neutral-200/50 transition-transform duration-300 ease-in-out ${
+      isHeaderVisible ? 'translate-y-0' : '-translate-y-full'
+    }`}>
       <div className="max-w-7xl mx-auto px-3 sm:px-4 lg:px-8 py-2 sm:py-4">
         <div className="flex justify-between items-center min-h-[60px] sm:h-16">
           {/* Logo */}
@@ -147,7 +181,10 @@ export default function Header() {
           <div className="hidden md:flex items-center space-x-4">
             <Link
               href="/contact"
-              className="bg-primary text-white px-4 lg:px-6 py-2 rounded-lg hover:bg-primary-dark transition-colors duration-200 font-medium text-sm lg:text-base"
+              className="text-white px-4 lg:px-6 py-2 rounded-lg transition-colors duration-200 font-medium text-sm lg:text-base"
+              style={{backgroundColor: '#ab21a1'}}
+              onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#9a1d8f'}
+              onMouseLeave={(e) => e.currentTarget.style.backgroundColor = '#ab21a1'}
             >
               Get Quote
             </Link>
@@ -157,7 +194,8 @@ export default function Header() {
           <div className="md:hidden flex items-center space-x-2">
             <Link
               href="/contact"
-              className="bg-primary text-white px-3 py-1.5 rounded text-xs font-medium"
+              className="text-white px-3 py-1.5 rounded text-xs font-medium"
+              style={{backgroundColor: '#ab21a1'}}
             >
               Quote
             </Link>
@@ -265,7 +303,8 @@ export default function Header() {
               <div className="pt-4">
                 <Link
                   href="/contact"
-                  className="block w-full text-center bg-primary text-white px-6 py-2 rounded-lg hover:bg-primary-dark transition-colors duration-200 font-medium"
+                  className="block w-full text-center text-white px-6 py-2 rounded-lg transition-colors duration-200 font-medium"
+                  style={{backgroundColor: '#ab21a1'}}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Get Quote

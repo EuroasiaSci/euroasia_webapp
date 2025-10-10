@@ -4,9 +4,9 @@
 
 :root {
   /* EUROASIA Brand Colors - Custom Blue Theme */
-  --primary: #410798;        /* Your specific blue */
+  --primary: #48009f;        /* Brand Blue */
   --primary-dark: #350d7a;   /* Darker Blue */
-  --secondary: #6366f1;      /* Complementary Blue */
+  --secondary: #ab21a1;      /* Brand Purple */
   --accent: #f59e0b;         /* Warm Orange */
   --neutral-50: #f8fafc;
   --neutral-100: #f1f5f9;
@@ -64,7 +64,7 @@ body {
 
 /* Utility classes */
 .text-gradient {
-  background: linear-gradient(135deg, #410798, #6366f1);
+  background: linear-gradient(135deg, #ab21a1, #48009f);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;

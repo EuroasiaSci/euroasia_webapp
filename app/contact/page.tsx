@@ -118,7 +118,7 @@ export default function ContactPage() {
       <section className="py-16 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-neutral-900 mb-12 text-center">Send Message</h2>
+            <h2 className="text-3xl font-bold mb-12 text-center" style={{color: '#48009f'}}>Send Message</h2>
             
             <form onSubmit={handleSubmit} className="bg-white rounded-xl p-8 shadow-soft border border-neutral-200">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -253,7 +253,8 @@ export default function ContactPage() {
               <div className="mt-12 text-center">
                 <button
                   type="submit"
-                  className="bg-primary text-white px-12 py-4 rounded-lg hover:bg-primary-dark transition-colors duration-200 font-semibold text-lg shadow-medium hover:shadow-large transform hover:-translate-y-1"
+                  className="text-white px-12 py-4 rounded-lg transition-colors duration-200 font-semibold text-lg shadow-medium hover:shadow-large transform hover:-translate-y-1"
+                  style={{backgroundColor: '#ab21a1'}}
                 >
                   Submit
                 </button>

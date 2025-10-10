@@ -169,7 +169,7 @@ export default function ClientTestimonials() {
         {/* Trust Badges */}
         <div className="mt-16">
           <div className="text-center mb-8">
-            <h3 className="text-lg font-semibold text-neutral-700 mb-4">
+            <h3 className="text-lg font-semibold text-gradient mb-4">
               Trusted by Industry Leaders
             </h3>
           </div>
@@ -196,7 +196,7 @@ export default function ClientTestimonials() {
         {/* Bottom CTA */}
         <div className="text-center mt-16">
           <div className="bg-white rounded-2xl p-8 shadow-medium">
-            <h3 className="text-2xl font-bold text-neutral-900 mb-4">
+            <h3 className="text-2xl font-bold text-gradient mb-4">
               Ready to Join Our Satisfied Clients?
             </h3>
             <p className="text-neutral-600 mb-6 max-w-2xl mx-auto">

@@ -3,64 +3,40 @@
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Breadcrumb from '../../components/Breadcrumb';
-import Link from 'next/link';
+import CallToAction from '../../components/CallToAction';
+import Image from 'next/image';
 
 export default function CosmeticsPersonalCarePage() {
   const services = [
     {
       title: "Haircare",
       description: "Our haircare testing services include evaluations for product efficacy, safety, and compliance, assessing factors like product stability, ingredient analysis, and performance to meet consumer expectations.",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zM21 5a2 2 0 00-2-2h-4a2 2 0 00-2 2v12a4 4 0 004 4h4a2 2 0 002-2V5z" />
-        </svg>
-      )
+      image: "/images/cosmetics/haircare.jpg"
     },
     {
       title: "Skincare",
       description: "We provide a range of tests for skincare products, ensuring they are safe, effective, and compliant with industry regulations, covering aspects such as skin compatibility, ingredient analysis, and stability.",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-        </svg>
-      )
+      image: "/images/cosmetics/skincare.jpg"
     },
     {
       title: "Home Care Products",
       description: "Our testing services for home care products (from detergents to cleaning agents) ensure they meet safety, environmental, and performance standards, assessing factors like chemical content, biodegradability, and efficacy.",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" />
-        </svg>
-      )
+      image: "/images/cosmetics/home_care_products.png"
     },
     {
       title: "Makeup",
       description: "We highlight the importance of safety in the makeup industry, detailing rigorous tests for makeup products, including assessments for ingredient safety, allergens, and performance to guarantee products are both beautiful and safe.",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
-        </svg>
-      )
+      image: "/images/cosmetics/makeup.jpeg"
     },
     {
       title: "Perfumes",
       description: "Our testing for perfumes includes fragrance composition, longevity, and safety, ensuring they meet the highest standards for quality, performance, and compliance.",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-        </svg>
-      )
+      image: "/images/cosmetics/perfume.jpg"
     },
     {
       title: "Toiletries",
       description: "We conduct tests for toiletry products to ensure they are safe, effective, and compliant with industry regulations, covering aspects like skin compatibility, ingredient analysis, and stability.",
-      icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
-        </svg>
-      )
+      image: "/images/cosmetics/toiletries.jpg"
     }
   ];
 
@@ -93,39 +69,10 @@ export default function CosmeticsPersonalCarePage() {
       {/* Industry Overview */}
       <section className="py-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h2 className="text-3xl font-bold text-neutral-900 mb-6">Your Trusted Partner in Cosmetics Testing</h2>
-              <p className="text-lg text-neutral-700 leading-relaxed mb-6">
-                At EuroAsia, we are a trusted partner in ensuring the safety, quality, and compliance of cosmetics across diverse categories. We offer comprehensive testing services tailored to the unique needs of the cosmetic industry, covering haircare, skincare, home care products, makeup, perfumes, and toiletries, to ensure products meet the highest industry standards.
-              </p>
-              <div className="space-y-4">
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-neutral-700">30+ Tests Per Month</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-neutral-700">Global Regulatory Compliance</span>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-2 h-2 bg-primary rounded-full"></div>
-                  <span className="text-neutral-700">Advanced Analytical Methods</span>
-                </div>
-              </div>
-            </div>
-            <div className="relative h-96 rounded-xl overflow-hidden shadow-large from-primary/10 to-secondary/10 flex items-center justify-center">
-              <div className="text-center">
-                <div className="w-32 h-32 bg-pink-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                  <svg className="w-16 h-16 text-pink-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
-                  </svg>
-                </div>
-                <h3 className="text-2xl font-bold text-primary mb-2">Cosmetics & Personal Care</h3>
-                <p className="text-neutral-600">Beauty & Safety Testing</p>
-              </div>
-            </div>
-          </div>
+          <h2 className="text-3xl font-bold mb-6" style={{color: '#48009f'}}>Elevate Your Cosmetics with EuroAsia&apos;s Comprehensive Testing Services</h2>
+          <p className="text-lg text-neutral-700 leading-relaxed mb-6">
+            EuroAsia is your trusted partner in ensuring the safety, quality, and compliance of cosmetics across a diverse range of categories. We offer a comprehensive suite of testing services tailored to the unique needs of the cosmetics industry. Our expertise covers haircare, skincare, home care products, makeup, perfumes, and toiletries, ensuring that your products meet the highest industry standards.
+          </p>
         </div>
       </section>
 
@@ -133,7 +80,7 @@ export default function CosmeticsPersonalCarePage() {
       <section className="py-16 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-neutral-900 mb-4">Our Expertise Encompasses a Variety of Cosmetic Categories</h2>
+            <h2 className="text-3xl font-bold mb-4" style={{color: '#48009f'}}>Our Expertise Encompasses a Variety of Cosmetic Categories</h2>
             <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
               Comprehensive testing services across six main cosmetic product categories
             </p>
@@ -141,14 +88,24 @@ export default function CosmeticsPersonalCarePage() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {services.map((service, index) => (
-              <div key={index} className="group p-8 rounded-xl border border-neutral-200 hover:border-primary hover:shadow-medium transition-all duration-300 hover:-translate-y-1">
-                <div className="flex items-center justify-center w-16 h-16 bg-primary/10 text-primary rounded-xl mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-300">
-                  {service.icon}
+              <div key={index} className="group rounded-xl border border-neutral-200 hover:border-primary hover:shadow-medium transition-all duration-300 hover:-translate-y-1 overflow-hidden">
+                {/* Image Section */}
+                <div className="h-48 relative">
+                  <Image
+                    src={service.image}
+                    alt={service.title}
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
                 </div>
-                <h3 className="text-xl font-semibold text-neutral-900 mb-4 group-hover:text-primary transition-colors duration-300">
-                  {service.title}
-                </h3>
-                <p className="text-sm text-neutral-600 leading-relaxed">{service.description}</p>
+                
+                {/* Text Section */}
+                <div className="p-8 flex flex-col items-center text-center">
+                  <h3 className="text-xl font-semibold text-neutral-900 mb-4 group-hover:text-primary transition-colors duration-300 text-center">
+                    {service.title}
+                  </h3>
+                  <p className="text-sm text-neutral-600 leading-relaxed text-center">{service.description}</p>
+                </div>
               </div>
             ))}
           </div>
@@ -160,8 +117,8 @@ export default function CosmeticsPersonalCarePage() {
 
       {/* EuroAsia Partnership Section */}
       <section className="py-16 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-neutral-900 mb-8">EuroAsia: Your Partner in Quality and Compliance</h2>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold mb-8" style={{color: '#48009f'}}>EuroAsia: Your Partner in Quality and Compliance</h2>
           
           <div className="space-y-6 text-lg text-neutral-700 leading-relaxed">
             <p>
@@ -184,24 +141,9 @@ export default function CosmeticsPersonalCarePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-primary">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl font-bold text-white mb-6">Ready to Elevate Your Cosmetics Quality?</h2>
-          <p className="text-xl text-white/90 mb-8">
-            Partner with EuroAsia to ensure your cosmetic products meet the highest safety and quality standards
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link
-              href="/contact"
-              className="bg-white text-primary px-8 py-4 rounded-lg hover:bg-neutral-100 transition-colors duration-200 font-semibold"
-            >
-              Get Quote
-            </Link>
-           
-          </div>
-        </div>
-      </section>
+     
 
+      <CallToAction />
       <Footer />
     </div>
   );
