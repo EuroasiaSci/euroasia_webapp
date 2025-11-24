@@ -9,10 +9,9 @@ export default function SustainableSupplyChain() {
         </svg>
       ),
       points: [
-        "Testing",
         "Quick Scan on Prototype",
         "Collection Review",
-        "Risk Assessment",
+        "Risk assessment",
         "Product Concept Assessment"
       ]
     },
@@ -25,10 +24,11 @@ export default function SustainableSupplyChain() {
         </svg>
       ),
       points: [
-        "Factory Assessment",
-        "COC (Certificate of Conformity)",
-        "Environment Audit",
-        "Technical Audit"
+        "Supplier Verification (SV)",
+        "Factory Assessment (FA)",
+        "Technical Audit (TA)",
+        "Social Compliance Audit (SCA)",
+        "Environment Audit (EA)"
       ]
     },
     {
@@ -41,11 +41,7 @@ export default function SustainableSupplyChain() {
       ),
       points: [
         "Testing",
-        "Pre-Production Assessment",
-        "Performance Evaluation",
-        "Construction Check",
-        "Compliance Testing",
-        "Performance Benchmarking Check"
+        "Benchmark Product Assessment (BPA)"
       ]
     },
     {
@@ -58,10 +54,10 @@ export default function SustainableSupplyChain() {
         </svg>
       ),
       points: [
-        "Initial Product Inspection",
-        "During Production Inspection",
-        "Picking (Pre-Shipment Inspection)",
-        "Control Plans"
+        "Fabric Inspection (FAB)",
+        "Initial Production Inspection (IPI)",
+        "During Production Inspection (DPI)",
+        "Sample Picking (SAP)"
       ]
     },
     {
@@ -73,9 +69,10 @@ export default function SustainableSupplyChain() {
         </svg>
       ),
       points: [
-        "Final Random Inspection",
-        "Sample Picking",
-        "Loading Supervision"
+        "Final Random Inspection (FRI)",
+        "Complete Assurance Program (100% Inspection)" ,
+        "Packing Compliance Inspection (PCI)",
+        "Container Loading Supervision (CLS)"
       ]
     }
   ];
@@ -114,14 +111,20 @@ export default function SustainableSupplyChain() {
 
                 {/* Points List */}
                 <ul className="space-y-2 text-left">
-                  {stage.points.map((point, pointIndex) => (
-                    <li key={pointIndex} className="flex items-start">
-                      <svg className="w-3 h-3 sm:w-4 sm:h-4 text-primary mt-0.5 mr-2 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                      </svg>
-                      <span className="text-xs sm:text-sm text-neutral-600 leading-relaxed">{point}</span>
-                    </li>
-                  ))}
+                  {stage.points.map((point, pointIndex) => {
+                    const pointText = typeof point === 'string' ? point : point.text;
+                    const isHighlighted = typeof point === 'object' && point.highlight;
+                    return (
+                      <li key={pointIndex} className="flex items-start">
+                        <svg className={`w-3 h-3 sm:w-4 sm:h-4 mt-0.5 mr-2 flex-shrink-0 ${isHighlighted ? 'text-blue-600' : 'text-primary'}`} fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                        </svg>
+                        <span className={`text-xs sm:text-sm leading-relaxed ${isHighlighted ? 'text-black font-semibold' : 'text-black'}`}>
+                          {pointText}
+                        </span>
+                      </li>
+                    );
+                  })}
                 </ul>
               </div>
             ))}
