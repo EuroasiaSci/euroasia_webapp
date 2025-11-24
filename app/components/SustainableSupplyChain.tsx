@@ -112,8 +112,8 @@ export default function SustainableSupplyChain() {
                 {/* Points List */}
                 <ul className="space-y-2 text-left">
                   {stage.points.map((point, pointIndex) => {
-                    const pointText = typeof point === 'string' ? point : point.text;
-                    const isHighlighted = typeof point === 'object' && point.highlight;
+                    const pointText = typeof point === 'string' ? point : point as string;
+                    const isHighlighted = typeof point === 'string' ? false : true;
                     return (
                       <li key={pointIndex} className="flex items-start">
                         <svg className={`w-3 h-3 sm:w-4 sm:h-4 mt-0.5 mr-2 flex-shrink-0 ${isHighlighted ? 'text-blue-600' : 'text-primary'}`} fill="currentColor" viewBox="0 0 20 20">
