@@ -94,6 +94,11 @@ export default function ServicesPage() {
                   <p className="text-neutral-600 leading-relaxed mb-4">
                     {service.description}
                   </p>
+                  {service.title === "Certification Services" && (
+                    <p className="text-sm text-amber-600 font-medium mb-4 italic">
+                      Disclaimer : Certification services are currently under development and are not offered at present
+                    </p>
+                  )}
                   <div className="mt-auto">
                     <h4 className="text-sm font-semibold text-neutral-800 mb-3">Related Industries:</h4>
                     <div className="flex flex-wrap gap-2 justify-center">

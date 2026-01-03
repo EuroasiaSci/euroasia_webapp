@@ -62,6 +62,11 @@ export default function OurServices() {
                 <p className="text-neutral-600 leading-relaxed">
                   {service.description}
                 </p>
+                {service.title === "Certification Services" && (
+                  <p className="text-sm text-amber-600 font-medium mt-4 italic">
+                    Disclaimer : Certification services are currently under development and are not offered at present
+                  </p>
+                )}
               </div>
             </div>
           ))}
