@@ -5,8 +5,46 @@ import Footer from '../components/Footer';
 import Breadcrumb from '../components/Breadcrumb';
 import CallToAction from '../components/CallToAction';
 import Image from 'next/image';
+import { useEffect, useRef } from 'react';
 
 export default function ImpartialityPolicy() {
+  const pdfRef = useRef<HTMLIFrameElement>(null);
+
+  useEffect(() => {
+    // Prevent right-click on the entire page when hovering over PDF
+    const handleContextMenu = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.closest('.pdf-container')) {
+        e.preventDefault();
+        return false;
+      }
+    };
+
+    // Prevent keyboard shortcuts for download/print
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const target = e.target as HTMLElement;
+      if (target.closest('.pdf-container')) {
+        // Disable Ctrl+S, Ctrl+P, Ctrl+A, F12
+        if ((e.ctrlKey || e.metaKey) && (e.key === 's' || e.key === 'p' || e.key === 'a')) {
+          e.preventDefault();
+          return false;
+        }
+        if (e.key === 'F12') {
+          e.preventDefault();
+          return false;
+        }
+      }
+    };
+
+    document.addEventListener('contextmenu', handleContextMenu);
+    document.addEventListener('keydown', handleKeyDown);
+
+    return () => {
+      document.removeEventListener('contextmenu', handleContextMenu);
+      document.removeEventListener('keydown', handleKeyDown);
+    };
+  }, []);
+
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -181,6 +219,40 @@ export default function ImpartialityPolicy() {
                   className="w-full h-auto"
                   width={1000}
                   height={1000}
+                />
+              </div>
+            </div>
+
+            {/* Terms and Conditions */}
+            <div className="bg-white rounded-xl shadow-large p-6 border border-neutral-200">
+              <h3 className="text-xl font-semibold text-neutral-900 mb-4">Terms and Conditions</h3>
+              <div 
+                className="pdf-container relative w-full overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50" 
+                style={{ 
+                  userSelect: 'none',
+                  WebkitUserSelect: 'none',
+                  MozUserSelect: 'none',
+                  msUserSelect: 'none'
+                }}
+              >
+                <iframe
+                  ref={pdfRef}
+                  src="/files/ESI-QM-Annexure-III-Term%20-Conditions.pdf#toolbar=0&navpanes=0&scrollbar=1"
+                  className="w-full border-0"
+                  style={{ 
+                    height: '800px',
+                    pointerEvents: 'auto',
+                    userSelect: 'none',
+                    WebkitUserSelect: 'none',
+                    MozUserSelect: 'none',
+                    msUserSelect: 'none'
+                  }}
+                  title="Terms and Conditions"
+                  allow="fullscreen"
+                  onContextMenu={(e) => {
+                    e.preventDefault();
+                    return false;
+                  }}
                 />
               </div>
             </div>
