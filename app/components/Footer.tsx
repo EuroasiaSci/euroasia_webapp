@@ -16,6 +16,7 @@ export default function Footer() {
       { name: 'Our Presence', href: '/our-presence' },
       { name: 'Quality Policy', href: '/quality-policy' },
       { name: 'Impartiality Policy', href: '/euroasia-impartiality-policy' },
+      { name: 'Terms & Conditions', href: '/terms-and-conditions' },
       // { name: 'Company Brochure', href: '/files/Broucher.docx', external: true },
     ],
     services: [

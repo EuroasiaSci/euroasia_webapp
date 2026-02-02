@@ -224,38 +224,7 @@ export default function ImpartialityPolicy() {
             </div>
 
             {/* Terms and Conditions */}
-            <div className="bg-white rounded-xl shadow-large p-6 border border-neutral-200">
-              <h3 className="text-xl font-semibold text-neutral-900 mb-4">Terms and Conditions</h3>
-              <div 
-                className="pdf-container relative w-full overflow-hidden rounded-lg border border-neutral-200 bg-neutral-50" 
-                style={{ 
-                  userSelect: 'none',
-                  WebkitUserSelect: 'none',
-                  MozUserSelect: 'none',
-                  msUserSelect: 'none'
-                }}
-              >
-                <iframe
-                  ref={pdfRef}
-                  src="/files/ESI-QM-Annexure-III-Term%20-Conditions.pdf#toolbar=0&navpanes=0&scrollbar=1"
-                  className="w-full border-0"
-                  style={{ 
-                    height: '800px',
-                    pointerEvents: 'auto',
-                    userSelect: 'none',
-                    WebkitUserSelect: 'none',
-                    MozUserSelect: 'none',
-                    msUserSelect: 'none'
-                  }}
-                  title="Terms and Conditions"
-                  allow="fullscreen"
-                  onContextMenu={(e) => {
-                    e.preventDefault();
-                    return false;
-                  }}
-                />
-              </div>
-            </div>
+            
           </div>
         </div>
       </section>
